@@ -9,6 +9,22 @@ export function ProductDetail({ product }: { product: Product }) {
   const [size, setSize] = useState(product.sizes[0]);
   const [quantity, setQuantity] = useState(1);
 
+const addToCart = () => {
+  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+  cart.push({
+    name: product.name,
+    price: product.price,
+    image: product.images[0],
+    size: size,
+    quantity: quantity
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
+  alert("Added to cart!");
+};
+
   return (
     <section className="py-16">
       <div className="section-wrap grid gap-10 lg:grid-cols-2">
@@ -57,9 +73,12 @@ export function ProductDetail({ product }: { product: Product }) {
             </div>
           </div>
 
-          <button className="rounded-full border border-gold bg-gold px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-maroon transition hover:bg-maroon hover:text-cream">
+          <button
+            onClick={addToCart}
+            className="rounded-full border border-gold bg-gold px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-maroon transition hover:bg-maroon hover:text-cream"
+          >
             Add to Cart
-          </button>
+         </button>
 
           <div className="rounded-2xl border border-maroon/10 bg-white p-5">
             <p className="text-xs uppercase tracking-[0.2em] text-gold">Customer Reviews</p>
