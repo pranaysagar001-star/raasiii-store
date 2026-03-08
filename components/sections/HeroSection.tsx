@@ -2,20 +2,37 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { BangleScene } from '@/components/three/BangleScene';
 
 export function HeroSection() {
   return (
     <section className="relative min-h-[86vh] overflow-hidden">
-      <div className="absolute inset-0">
-        <BangleScene />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/45 to-maroon/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#020617] via-[#0f172a] to-[#020617]" />
 
-      <div className="section-wrap relative z-10 flex min-h-[86vh] flex-col items-center justify-center text-center text-cream">
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-4 text-xs uppercase tracking-[0.35em] text-gold">
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <motion.img
+          src="/images/hero/bangle.png"
+          alt="Threaded Bangle"
+          animate={{ rotate: 360 }}
+          transition={{
+            repeat: Infinity,
+            duration: 20,
+            ease: 'linear'
+          }}
+          className="w-[520px] md:w-[720px] opacity-90"
+        />
+      </div>
+
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-maroon/90 to-maroon" />
+
+      <div className="section-wrap relative z-20 flex min-h-[86vh] flex-col items-center justify-center text-center text-cream">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-4 text-xs uppercase tracking-[0.35em] text-gold"
+        >
           Handcrafted Luxury
         </motion.p>
+
         <motion.h1
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -24,13 +41,31 @@ export function HeroSection() {
         >
           RAASIII
         </motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-4 text-xl md:text-2xl">
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="mt-4 text-xl md:text-2xl"
+        >
           Handcrafted Threaded Bangles
         </motion.p>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }} className="mt-2 text-base text-cream/90 md:text-lg">
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.45 }}
+          className="mt-2 text-base text-cream/90 md:text-lg"
+        >
           Elegance Woven by Hand
         </motion.p>
-        <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="mt-10">
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+          className="mt-10"
+        >
           <Link
             href="/shop"
             className="rounded-full border border-gold bg-gold px-8 py-3 text-xs font-semibold uppercase tracking-[0.24em] text-maroon shadow-glow transition hover:-translate-y-1 hover:bg-transparent hover:text-gold"
