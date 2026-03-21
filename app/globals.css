@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply font-body text-white;
+  background-color: #0b0f1a;
+  background-image: radial-gradient(circle at 20% -10%, rgba(200, 155, 60, 0.08), transparent 30%),
+    radial-gradient(circle at 90% 0%, rgba(200, 155, 60, 0.05), transparent 28%),
+    linear-gradient(180deg, #0b0f1a 0%, #1a1f2e 100%);
+}
+
+.section-wrap {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.gold-text {
+  background: linear-gradient(135deg, #c89b3c 20%, #f7d48a 50%, #a87720 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-blur {
+  background: rgba(255, 249, 240, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.premium-panel {
+  @apply rounded-[30px] border border-white/10 bg-white/5 text-white shadow-[0_18px_60px_rgba(5,8,15,0.34)] backdrop-blur-md;
+}
+
+.admin-card {
+  @apply rounded-[28px] border border-white/10 bg-white/5 p-5 text-white shadow-[0_18px_60px_rgba(5,8,15,0.34)] backdrop-blur-md;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+textarea,
+select {
+  @apply rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-gray-400 focus:border-gold focus:ring-2 focus:ring-gold/25;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  @apply h-4 w-4 accent-[#c89b3c];
+}
+
+input[type='file'] {
+  @apply text-white file:mr-4 file:rounded-full file:border-0 file:bg-[#c89b3c] file:px-4 file:py-2 file:text-xs file:font-semibold file:uppercase file:tracking-[0.18em] file:text-[#0b0f1a];
+}
+
+button:disabled {
+  @apply cursor-not-allowed opacity-60;
+}
